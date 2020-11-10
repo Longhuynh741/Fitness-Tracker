@@ -20,6 +20,10 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/fitness-tracks"
 
 const connection = mongoose.connection;
 
+//require our routes for our server to access
+require("./routes/htmlRoutes")(app);
+require("./routes/apiRoutes")(app);
+
 connection.on("connected", () => {
   console.log("Mongoose successfully connected.");
 });
