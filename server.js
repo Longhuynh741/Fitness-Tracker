@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-//
+
 const PORT = process.env.PORT || 3000;
 
 
@@ -22,7 +22,7 @@ const connection = mongoose.connection;
 
 //require our routes for our server to access
 require("./routes/htmlRoutes")(app);
-require("./routes/apiRoutes")(app);
+// require("./routes/apiRoutes")(app);
 
 connection.on("connected", () => {
   console.log("Mongoose successfully connected.");
